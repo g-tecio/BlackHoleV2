@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateHole : MonoBehaviour {
+public class Obstacle : MonoBehaviour {
 
-    public float speed = 100f;
+    public float speed = 10.0f;
+
+    void Start () {
+		
+	}
 	
-	// Update is called once per frame
 	void Update () {
-        RotateHoleAround();
+        MoveObstacles();
 	}
 
-    void RotateHoleAround(){
+    void MoveObstacles(){
         transform.Rotate(0f, 0f, speed * Time.deltaTime);
     }
 }
+
