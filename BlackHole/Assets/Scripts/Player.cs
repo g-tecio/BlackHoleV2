@@ -17,48 +17,21 @@ public class Player : MonoBehaviour {
 
 	PlayerState currentState = PlayerState.Falling;
 
-
-	
-
-
-	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	
-	// Update is called once per frame
-	void FixedUpdate () 
-	{
-	
-		
-		
-	}
-
 	void Update()
 	{
-		GetInput();
+	
 	}
 
-	void GetInput()
-	{
-		if (Input.GetMouseButton(0))
-		{
-			if (currentState == PlayerState.Standing)
-			{
-				Jump();
-			}
-		}
-	}
 
     public void Jump()
 	{
 		currentState = PlayerState.Jumping;
 		rb.AddForce(transform.position * jumpForce);
 	}
-	
-
-	
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
