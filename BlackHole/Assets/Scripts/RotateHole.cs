@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateHole : MonoBehaviour {
 
-    public float speed = 100f;
+    public float speed = 50.0f;
 	
 	// Update is called once per frame
 	void Update () {
