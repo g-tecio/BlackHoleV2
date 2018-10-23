@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
 	public Transform Target;
 	private Vector3 zAxis = new Vector3(0,0,1);
 
+	private float RotateSpeed= 0.0f;
+
 	public float jumpForce;
 
 	 Rigidbody2D rb;
@@ -28,16 +30,12 @@ public class Player : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	void FixedUpdate () 
-	{
 	
-		
-		
-	}
 
 	void Update()
 	{
 		GetInput();
+		this.transform.RotateAround(Target.position, zAxis, RotateSpeed);
 	}
 
 	void GetInput()
