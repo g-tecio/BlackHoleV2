@@ -35,8 +35,10 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		
-		currentState = PlayerState.Standing;
+        if(other.gameObject.tag == "Coin"){
+            Destroy(other.gameObject);
+
+        }
 	}
 
 
