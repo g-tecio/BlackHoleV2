@@ -50,6 +50,12 @@ public class Player : MonoBehaviour {
         if (other.gameObject.name == "CoinL3")
         {
             Destroy(other.gameObject);
+            SceneManager.LoadScene("Level4");
+        }
+
+        if (other.gameObject.name == "CoinL4")
+        {
+            Destroy(other.gameObject);
             SceneManager.LoadScene("Level1");
         }
 
