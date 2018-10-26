@@ -479,6 +479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 284133625}
   - component: {fileID: 284133624}
+  - component: {fileID: 284133626}
   m_Layer: 0
   m_Name: Obstacles
   m_TagString: Untagged
@@ -497,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d29c76094d6654688880ed0d6bda905b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -100
+  speed: 200.8
 --- !u!4 &284133625
 Transform:
   m_ObjectHideFlags: 0
@@ -507,14 +508,23 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.1, z: 18.670267}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1420504494}
-  - {fileID: 1961207733}
-  - {fileID: 1720532408}
-  - {fileID: 1051458132}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &284133626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 284133623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8a2a0aee00242f19f1e1fb1d3cdfd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numObjects: 6
+  prefab: {fileID: 1889283388576740, guid: d544c25dd90b4431abd5193c3635da81, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +707,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1051458131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1132,8 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1501847015}
   m_CullTransparentMesh: 0
+=======
+>>>>>>> e3eb62c2a4d1eb6dd11d2af1f1cdaaad5c165144
 --- !u!1 &1566065282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,6 +1365,7 @@ RectTransform:
   m_Father: {fileID: 2133694441}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1465,6 +1479,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+=======
+>>>>>>> e3eb62c2a4d1eb6dd11d2af1f1cdaaad5c165144
 --- !u!1 &1859817524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,6 +1640,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+<<<<<<< HEAD
 --- !u!1 &1961207732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +1906,8 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1966251102}
   m_CullTransparentMesh: 0
+=======
+>>>>>>> e3eb62c2a4d1eb6dd11d2af1f1cdaaad5c165144
 --- !u!1 &2133694437
 GameObject:
   m_ObjectHideFlags: 0
