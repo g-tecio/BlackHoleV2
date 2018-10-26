@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
+
 	public Transform Target;
-	private Vector3 zAxis = new Vector3(0,0,1);
 
 	public float jumpForce;
 
@@ -35,11 +36,24 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-        if(other.gameObject.tag == "Coin"){
+        if(other.gameObject.name == "CoinL1"){
             Destroy(other.gameObject);
-
+            //GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = 100.0f;
+            SceneManager.LoadScene("Level2");
         }
-	}
+
+        if(other.gameObject.name == "CoinL2"){
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("Level3");
+        }
+
+        if (other.gameObject.name == "CoinL3")
+        {
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("Level1");
+        }
+
+    }
 
 
 

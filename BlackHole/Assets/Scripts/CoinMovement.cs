@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CoinMovement : MonoBehaviour {
 
-    public float speed = -75.0f;
+    public float speed = -75f;
+    public float radiusM = 1.45f;
 
     // Use this for initialization
     void Start () {
-		
 	}
 	
 	// Update is called once per frame
