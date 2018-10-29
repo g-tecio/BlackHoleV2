@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour {
-    public float speed = -100.0f;
+public class Spawn : MonoBehaviour {
     public int numObjects;
     public GameObject prefab;
-    void Start () {
-        SpawnObj();
-	}
-	
-	void Update () {
-        MoveObstacles();
-	}
 
-    void MoveObstacles(){
-        transform.Rotate(0f, 0f, speed * Time.deltaTime);
+    public GameObject obj1;
+
+
+    // Use this for initialization
+    void Start()
+    {
+        SpawnObj();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     void SpawnObj()
@@ -25,18 +28,20 @@ public class Obstacle : MonoBehaviour {
         {
             Vector2 pos = obstacle(center, 1.9f);
             Quaternion rot = Quaternion.FromToRotation(Vector2.up, center - pos);
-            Instantiate(prefab, pos, rot);
+            //prefab.transform.parent = gameObject.transform;
+            GameObject childObject = Instantiate(obj1, pos, rot) as GameObject;
+             childObject.transform.parent = obj1.transform;
+            //childObject.transform.SetParent(prefab.transform, false);
         }
     }
 
     Vector2 obstacle(Vector2 center, float radius)
     {
+        
         float ang = Random.value * 360;
         Vector2 pos;
         pos.x = center.x + radius * Mathf.Sin(ang * Mathf.Deg2Rad);
         pos.y = center.y + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
         return pos;
     }
-
 }
-
