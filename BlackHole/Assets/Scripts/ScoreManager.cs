@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GameManager : MonoBehaviour {
+public class ScoreManager : MonoBehaviour {
 
 	public TextMeshProUGUI currentScoreText;
-	int currentScore;
+	int currentScore = 1;
+
 	// Use this for initialization
 	void Start () {
-		currentScore = 0;
-		SetScore();
+		
 	}
 	
 	// Update is called once per frame
@@ -18,13 +18,8 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
-	public void AddScore()
-	{
-		currentScore++;
-		SetScore();
-	}
-
-	void SetScore(){
+	public void AddScore(int score){
+		currentScore += score;
 		currentScoreText.text = currentScore.ToString();
 	}
 }

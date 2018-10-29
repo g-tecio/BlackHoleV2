@@ -7,8 +7,6 @@ public class Player : MonoBehaviour {
 
 	public Transform Target;
 
-    GameManager gameManager;
-
 	public float jumpForce;
 
 	 Rigidbody2D rb;
@@ -29,6 +27,10 @@ public class Player : MonoBehaviour {
 	
 	}
 
+    void AddScore(){
+        GameObject.Find("GameManager").GetComponent<ScoreManager>().AddScore(1);
+    }
+
 
     public void Jump()
 	{
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour {
 	{
         if(other.gameObject.name == "CoinL1"){
             Debug.Log("+1");
-            gameManager.AddScore();
+            
             Destroy(other.gameObject);
             //GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = 100.0f;
             SceneManager.LoadScene("Level2");
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour {
 
         if(other.gameObject.name == "CoinL2"){
             Debug.Log("+1");
+        
             Destroy(other.gameObject);
             SceneManager.LoadScene("Level3");
             
@@ -71,17 +74,5 @@ public class Player : MonoBehaviour {
         }
 
     }
-
-    // void OnTriggerEnter2D(Collider2D other){
-    //     if (other.gameObject.tag == "Coin"){
-    //         Debug.Log("+1");
-    //         gameManager.AddScore();
-    //          Destroy(other.gameObject);
-    //         //GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = 100.0f;
-    //         SceneManager.LoadScene("Level2");
-    //     }
-    // }
-
-
 
 }
