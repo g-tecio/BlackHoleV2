@@ -27,11 +27,6 @@ public class Player : MonoBehaviour {
 	
 	}
 
-    void AddScore(){
-        GameObject.Find("GameManager").GetComponent<ScoreManager>().AddScore(1);
-    }
-
-
     public void Jump()
 	{
 		currentState = PlayerState.Jumping;
@@ -41,16 +36,12 @@ public class Player : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
         if(other.gameObject.name == "CoinL1"){
-            Debug.Log("+1");
-            
             Destroy(other.gameObject);
-            //GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = 100.0f;
             SceneManager.LoadScene("Level2");
             
         }
 
         if(other.gameObject.name == "CoinL2"){
-            Debug.Log("+1");
         
             Destroy(other.gameObject);
             SceneManager.LoadScene("Level3");
@@ -59,7 +50,6 @@ public class Player : MonoBehaviour {
 
         if (other.gameObject.name == "CoinL3")
         {
-            Debug.Log("+1");
             Destroy(other.gameObject);
             SceneManager.LoadScene("Level4");
             
@@ -67,10 +57,30 @@ public class Player : MonoBehaviour {
 
         if (other.gameObject.name == "CoinL4")
         {
-            Debug.Log("+1");
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("Level5");
+            
+        }
+
+        if (other.gameObject.name == "CoinL5")
+        {
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("Level6");
+
+        }
+
+        if (other.gameObject.name == "CoinL6")
+        {
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("Level7");
+
+        }
+
+        if (other.gameObject.name == "CoinL7")
+        {
             Destroy(other.gameObject);
             SceneManager.LoadScene("Level1");
-            
+
         }
 
     }
