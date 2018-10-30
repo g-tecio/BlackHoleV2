@@ -27,14 +27,14 @@ public class Spawn : MonoBehaviour {
             Vector2 pos = obstacle(center, 1.9f);
             Quaternion rot = Quaternion.FromToRotation(Vector2.up, center - pos);
             GameObject childObject = Instantiate(obj1, pos, rot); //as GameObject;
-             childObject.transform.parent = transform;
+            childObject.transform.parent = transform;
         }
     }
 
     Vector2 obstacle(Vector2 center, float radius)
     {
-        
-        float ang = Random.value * 360/4 + 5;
+
+        float ang = Random.value * 270 / 4;
         Vector2 pos;
         pos.x = center.x + radius * Mathf.Sin(ang * Mathf.Deg2Rad);
         pos.y = center.y + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
