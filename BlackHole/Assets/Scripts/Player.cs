@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-        if(other.gameObject.name == "CoinL1"){
+        if(other.gameObject.tag == "Coin"){
             Destroy(other.gameObject);
             SceneManager.LoadScene("Level2");
             
