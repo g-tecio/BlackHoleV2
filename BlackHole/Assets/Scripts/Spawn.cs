@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour {
     public int numObjects;
-    public GameObject prefab;
-
     public GameObject obj1;
 
 
@@ -28,10 +26,8 @@ public class Spawn : MonoBehaviour {
         {
             Vector2 pos = obstacle(center, 1.9f);
             Quaternion rot = Quaternion.FromToRotation(Vector2.up, center - pos);
-            //prefab.transform.parent = gameObject.transform;
-            GameObject childObject = Instantiate(obj1, pos, rot) as GameObject;
+            GameObject childObject = Instantiate(obj1, pos, rot); //as GameObject;
              childObject.transform.parent = obj1.transform;
-            //childObject.transform.SetParent(prefab.transform, false);
         }
     }
 
