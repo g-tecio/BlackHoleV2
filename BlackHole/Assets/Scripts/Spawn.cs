@@ -27,7 +27,7 @@ public class Spawn : MonoBehaviour {
             Vector2 pos = obstacle(center, 1.9f);
             Quaternion rot = Quaternion.FromToRotation(Vector2.up, center - pos);
             GameObject childObject = Instantiate(obj1, pos, rot); //as GameObject;
-             childObject.transform.parent = obj1.transform;
+             childObject.transform.parent = transform;
         }
     }
 
