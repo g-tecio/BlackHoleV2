@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-    public GameObject ObstacleEffect;
-
-	public Transform Target;
-
 	public float jumpForce;
 
     bool coinUp = false;
@@ -31,6 +27,10 @@ public class Player : MonoBehaviour {
 	
 	}
 
+    void AddScore(){
+        GameObject.Find("GameManager").GetComponent<ScoreManager>().addScore(1);
+    }
+
     void AddNextCoin(){
         GameObject.Find("Coins").GetComponent<SpawnCoin>().SpawnObj();
     }
@@ -48,20 +48,21 @@ public class Player : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
         if(other.gameObject.tag == "Coin"){
+            AddScore();
             Destroy(other.gameObject);
             if (coinUp == false){
                 coinUp = true;
+                GameObject.Find("Coins").GetComponent<CoinMovement>().speed = -75.0f;
                 GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = 100.0f;
                 AddNextCoin();
                 AddNextObs();
-
             } else {
                 coinUp = false;
+                GameObject.Find("Coins").GetComponent<CoinMovement>().speed = 75.0f;
                 GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -100.0f;
                 AddNextCoin();
                 AddNextObs();
             }
-           
         }
 
         //if(other.gameObject.name == "CoinL2"){

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinMovement : MonoBehaviour {
 
-    public float speed = -75f;
+    public float speed = -65f;
     public float radiusM = 1.45f;
 
     // Use this for initialization
