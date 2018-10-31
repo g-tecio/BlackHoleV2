@@ -9,6 +9,7 @@ public class RotateHole : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         RotateHoleAround();
+       
 	}
 
     void RotateHoleAround(){
