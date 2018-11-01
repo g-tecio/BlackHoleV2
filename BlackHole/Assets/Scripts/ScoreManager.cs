@@ -20,6 +20,11 @@ public class ScoreManager : MonoBehaviour {
         //UICircle = GameObject.Find("Hole").GetComponent<Image>();
     }
 
+    void AddHole()
+    {
+        GameObject.Find("HolePosition").GetComponent<SpawnHole>().SpawnHoleAround();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,5 +35,9 @@ public class ScoreManager : MonoBehaviour {
     {
         currentScore += score;
         currentScoreText.text = currentScore.ToString();
+
+        if(currentScore == 2){
+            AddHole();
+        }
     }
 }

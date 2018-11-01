@@ -40,10 +40,6 @@ public class Player : MonoBehaviour {
         GameObject.Find("Obstacles").GetComponent<Spawn>().SpawnObj();
     }
 
-    void AddHole(){
-        GameObject.Find("HolePosition").GetComponent<SpawnHole>().SpawnHoleAround();
-    }
-
     public void Jump()
 	{
 		currentState = PlayerState.Jumping;
@@ -67,10 +63,6 @@ public class Player : MonoBehaviour {
                 GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
                 AddNextCoin();
                 AddNextObs();
-                if (GameObject.Find("HolePosition").GetComponent<ScoreManager>().currentScore == 2)
-                {
-                    AddHole();
-                }
             }
         }
 
