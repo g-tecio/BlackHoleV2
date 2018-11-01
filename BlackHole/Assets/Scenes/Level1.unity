@@ -224,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &241284426
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -309,6 +309,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScoreText: {fileID: 1348787100}
+  UIImagen: {fileID: 852486731}
+  UIButton: {fileID: 1224129814}
+  UICircle: {fileID: 0}
   currentScore: 0
 --- !u!4 &502772603
 Transform:

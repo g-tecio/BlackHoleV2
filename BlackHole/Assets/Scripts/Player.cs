@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -11,22 +12,20 @@ public class Player : MonoBehaviour {
 
     Rigidbody2D rb;
 
-
-
-	enum PlayerState{
-		Standing, Jumping, Falling
-	}
-
-	PlayerState currentState = PlayerState.Falling;
-
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
+        AddHole();
 	}
 
 	void Update()
 	{
 	
 	}
+
+    void AddHole()
+    {
+        GameObject.Find("HolePosition").GetComponent<SpawnHole>().SpawnHoleAround();
+    }
 
     void AddScore(){
         GameObject.Find("GameManager").GetComponent<ScoreManager>().addScore(1);
@@ -42,7 +41,6 @@ public class Player : MonoBehaviour {
 
     public void Jump()
 	{
-		currentState = PlayerState.Jumping;
 		rb.AddForce(transform.position * jumpForce);
 	}
 
@@ -50,33 +48,35 @@ public class Player : MonoBehaviour {
 	{
         if(other.gameObject.tag == "HoleDoor"){
             Destroy(other.gameObject);
-            SceneManager.LoadScene("Level2");
+            AddScore();
+            AddHole();
+
         }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Coin")
-        {
-            AddScore();
-            Destroy(collision.gameObject);
-            if (coinUp == false)
-            {
-                coinUp = true;
-                GameObject.Find("Coins").GetComponent<CoinMovement>().speed = -75.0f;
-                GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
-                AddNextCoin();
-                AddNextObs();
-            }
-            else
-            {
-                coinUp = false;
-                GameObject.Find("Coins").GetComponent<CoinMovement>().speed = 75.0f;
-                GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
-                AddNextCoin();
-                AddNextObs();
-            }
-        }
+        //if (collision.gameObject.tag == "Coin")
+        //{
+        //    AddScore();
+        //    Destroy(collision.gameObject);
+        //    if (coinUp == false)
+        //    {
+        //        coinUp = true;
+        //        GameObject.Find("Coins").GetComponent<CoinMovement>().speed = -75.0f;
+        //        GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
+        //        AddNextCoin();
+        //        AddNextObs();
+        //    }
+        //    else
+        //    {
+        //        coinUp = false;
+        //        GameObject.Find("Coins").GetComponent<CoinMovement>().speed = 75.0f;
+        //        GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
+        //        AddNextCoin();
+        //        AddNextObs();
+        //    }
+        //}
     }
 
 }
