@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnHole : MonoBehaviour {
 
-    public GameObject hole;
+    public GameObject door;
 
     void Start()
     {
@@ -21,9 +21,9 @@ public class SpawnHole : MonoBehaviour {
         Vector2 center = transform.position;
         for (int i = 0; i < 1; i++)
         {
-            Vector2 pos = obstacle(center, 1.5f);
-            Quaternion rot = Quaternion.FromToRotation(Vector2.up, center - pos);
-            GameObject childObject = Instantiate(hole, pos, rot);
+            Vector2 pos = obstacle(center, 2.08f);
+            Quaternion rot = Quaternion.FromToRotation(Vector2.down, center - pos);
+            GameObject childObject = Instantiate(door, pos, rot);
             childObject.transform.parent = transform;
         }
     }

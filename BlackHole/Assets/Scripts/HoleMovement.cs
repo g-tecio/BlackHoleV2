@@ -5,7 +5,6 @@ using UnityEngine;
 public class HoleMovement : MonoBehaviour {
 
     public float speed = -65f;
-    public float radiusM = 1.45f;
 
     // Use this for initialization
     void Start()
