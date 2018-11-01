@@ -53,13 +53,13 @@ public class Player : MonoBehaviour {
             if (coinUp == false){
                 coinUp = true;
                 GameObject.Find("Coins").GetComponent<CoinMovement>().speed = -75.0f;
-                GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = 100.0f;
+                GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
                 AddNextCoin();
                 AddNextObs();
             } else {
                 coinUp = false;
                 GameObject.Find("Coins").GetComponent<CoinMovement>().speed = 75.0f;
-                GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -100.0f;
+                GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
                 AddNextCoin();
                 AddNextObs();
             }
