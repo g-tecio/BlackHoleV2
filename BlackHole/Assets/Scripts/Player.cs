@@ -48,16 +48,28 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-        if(other.gameObject.tag == "Coin"){
-            AddScore();
+        if(other.gameObject.tag == "HoleDoor"){
             Destroy(other.gameObject);
-            if (coinUp == false){
+            SceneManager.LoadScene("Level2");
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            AddScore();
+            Destroy(collision.gameObject);
+            if (coinUp == false)
+            {
                 coinUp = true;
                 GameObject.Find("Coins").GetComponent<CoinMovement>().speed = -75.0f;
                 GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
                 AddNextCoin();
                 AddNextObs();
-            } else {
+            }
+            else
+            {
                 coinUp = false;
                 GameObject.Find("Coins").GetComponent<CoinMovement>().speed = 75.0f;
                 GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
@@ -65,54 +77,6 @@ public class Player : MonoBehaviour {
                 AddNextObs();
             }
         }
-
-        if(other.gameObject.tag == "HoleDoor"){
-            Destroy(other.gameObject);
-            SceneManager.LoadScene("Level2");
-        }
-
-        //if(other.gameObject.name == "CoinL2"){
-
-        //    Destroy(other.gameObject);
-        //    SceneManager.LoadScene("Level3");
-
-        //}
-
-        //if (other.gameObject.name == "CoinL3")
-        //{
-        //    Destroy(other.gameObject);
-        //    SceneManager.LoadScene("Level4");
-
-        //}
-
-        //if (other.gameObject.name == "CoinL4")
-        //{
-        //    Destroy(other.gameObject);
-        //    SceneManager.LoadScene("Level5");
-
-        //}
-
-        //if (other.gameObject.name == "CoinL5")
-        //{
-        //    Destroy(other.gameObject);
-        //    SceneManager.LoadScene("Level6");
-
-        //}
-
-        //if (other.gameObject.name == "CoinL6")
-        //{
-        //    Destroy(other.gameObject);
-        //    SceneManager.LoadScene("Level7");
-
-        //}
-
-        //if (other.gameObject.name == "CoinL7")
-        //{
-        //    Destroy(other.gameObject);
-        //    SceneManager.LoadScene("Level1");
-
-        //}
-
     }
 
 }

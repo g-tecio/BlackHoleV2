@@ -1758,7 +1758,7 @@ GameObject:
   - component: {fileID: 1915243044}
   m_Layer: 0
   m_Name: HolePosition
-  m_TagString: HoleDoor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1774,14 +1774,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1608593561bbe486897e29eadc620581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1864635791944634, guid: eb0bca1ead2c940e2a08f8abf3d20764, type: 2}
+  door: {fileID: 1819140634150832, guid: 149c7546d1e7143ada18a7fa93c5937f, type: 2}
 --- !u!114 &1915243045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1915243043}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38ce1a1bd568547d5aad263028ab6d34, type: 3}
   m_Name: 
