@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     Rigidbody2D rb;
 
 
+
 	enum PlayerState{
 		Standing, Jumping, Falling
 	}
@@ -39,6 +40,10 @@ public class Player : MonoBehaviour {
         GameObject.Find("Obstacles").GetComponent<Spawn>().SpawnObj();
     }
 
+    void AddHole(){
+        GameObject.Find("HolePosition").GetComponent<SpawnHole>().SpawnHoleAround();
+    }
+
     public void Jump()
 	{
 		currentState = PlayerState.Jumping;
@@ -62,28 +67,37 @@ public class Player : MonoBehaviour {
                 GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
                 AddNextCoin();
                 AddNextObs();
+                if (GameObject.Find("HolePosition").GetComponent<ScoreManager>().currentScore == 2)
+                {
+                    AddHole();
+                }
             }
         }
 
+        if(other.gameObject.tag == "HoleDoor"){
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("Level2");
+        }
+
         //if(other.gameObject.name == "CoinL2"){
-        
+
         //    Destroy(other.gameObject);
         //    SceneManager.LoadScene("Level3");
-            
+
         //}
 
         //if (other.gameObject.name == "CoinL3")
         //{
         //    Destroy(other.gameObject);
         //    SceneManager.LoadScene("Level4");
-            
+
         //}
 
         //if (other.gameObject.name == "CoinL4")
         //{
         //    Destroy(other.gameObject);
         //    SceneManager.LoadScene("Level5");
-            
+
         //}
 
         //if (other.gameObject.name == "CoinL5")
