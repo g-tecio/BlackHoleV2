@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &66599513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,6 +1448,7 @@ GameObject:
   - component: {fileID: 1445402702}
   - component: {fileID: 1445402701}
   - component: {fileID: 1445402705}
+  - component: {fileID: 1445402704}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Untagged
@@ -1467,6 +1468,7 @@ RectTransform:
   m_Children:
   - {fileID: 1285582732}
   - {fileID: 1915243046}
+  - {fileID: 2037510823}
   m_Father: {fileID: 1412575153}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1486,14 +1488,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dec443b73e347beb39f29535060287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -50
+  speed: -40
 --- !u!60 &1445402702
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1445402699}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1503,7 +1505,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 8}
+    oldSize: {x: 8, y: 8.01}
     newSize: {x: 8, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1790,7 +1792,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2502f82b92fc841fb9f3ec034a5628de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8bee52d6c2954a579e5e7db5daf3920, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1801,6 +1803,83 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &1445402704
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445402699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.37336335, y: 3.729887}
+  - {x: -0.80646765, y: 3.6669245}
+  - {x: -1.3706785, y: 3.4835894}
+  - {x: -1.9587013, y: 3.2147627}
+  - {x: -2.5811718, y: 2.7129622}
+  - {x: -2.7952437, y: 2.4996188}
+  - {x: -3.0237436, y: 2.2081997}
+  - {x: -3.330391, y: 1.7246372}
+  - {x: -3.4608157, y: 1.4415692}
+  - {x: -3.5706072, y: 1.1355089}
+  - {x: -3.6038094, y: 1.0631717}
+  - {x: -3.6237178, y: 0.9611263}
+  - {x: -3.6849358, y: 0.6809343}
+  - {x: -3.7188659, y: 0.4458857}
+  - {x: -3.749397, y: 0.015324392}
+  - {x: -3.7426193, y: -0.22091225}
+  - {x: -3.713288, y: -0.55292976}
+  - {x: -3.6051579, y: -1.0064319}
+  - {x: -3.486124, y: -1.4146479}
+  - {x: -3.409354, y: -1.5717157}
+  - {x: -2.9416635, y: -2.3280418}
+  - {x: -2.6306355, y: -2.6870596}
+  - {x: -2.2112885, y: -3.0323143}
+  - {x: -1.7879418, y: -3.3105867}
+  - {x: -1.4739013, y: -3.4544182}
+  - {x: -1.1194003, y: -3.5822294}
+  - {x: -0.5357562, y: -3.727085}
+  - {x: -0.074530736, y: -3.7587376}
+  - {x: -0.05452675, y: -3.756911}
+  - {x: 0.101023994, y: -3.7517545}
+  - {x: 0.37112182, y: -3.730322}
+  - {x: 0.57014495, y: -3.7063584}
+  - {x: 0.69476926, y: -3.6813986}
+  - {x: 1.0343868, y: -3.6055913}
+  - {x: 1.4463344, y: -3.4695404}
+  - {x: 1.921359, y: -3.2199657}
+  - {x: 2.0813706, y: -3.1298127}
+  - {x: 2.4854279, y: -2.8074849}
+  - {x: 2.7906075, y: -2.5085444}
+  - {x: 3.0924664, y: -2.1184473}
+  - {x: 3.2061255, y: -1.9454894}
+  - {x: 3.3669515, y: -1.636242}
+  - {x: 3.408405, y: -1.559267}
+  - {x: 3.4558601, y: -1.4320939}
+  - {x: 3.4787183, y: -1.3739474}
+  - {x: 3.5370395, y: -1.2128837}
+  - {x: 3.584192, y: -1.0853752}
+  - {x: 3.6982632, y: -0.6040294}
+  - {x: 3.7210367, y: -0.48159167}
+  - {x: 3.7452307, y: 0.103905015}
+  - {x: 3.7204823, y: 0.40748405}
+  - {x: 3.68938, y: 0.5724022}
+  - {x: 3.6565368, y: 0.73784393}
+  - {x: 3.5957189, y: 0.9831309}
+  - {x: 3.5396767, y: 1.2094847}
+  - {x: 3.1303144, y: 2.028827}
+  - {x: 3.0066228, y: 2.2025495}
+  - {x: 2.8826072, y: 2.3913884}
+  - {x: 2.5107374, y: 2.774591}
+  - {x: 1.8840998, y: 3.2464702}
+  - {x: 1.1854914, y: 3.56224}
+  - {x: 0.4736858, y: 3.7239106}
 --- !u!222 &1445402705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2147,7 +2226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1915243044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2185,3 +2264,57 @@ Transform:
   m_Father: {fileID: 1445402700}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2037510822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037510823}
+  - component: {fileID: 2037510824}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: HoleDoor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2037510823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2037510822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.046897892, y: 3.8561983, z: -2052.9492}
+  m_LocalScale: {x: 0.78895444, y: 0.21104051, z: 192}
+  m_Children: []
+  m_Father: {fileID: 1445402700}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2037510824
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2037510822}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
