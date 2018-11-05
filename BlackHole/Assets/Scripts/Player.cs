@@ -46,16 +46,19 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-        if(other.gameObject.tag == "HoleDoor"){
-            Destroy(other.gameObject);
-            AddScore();
-            AddHole();
 
-        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (collision.gameObject.tag == "HoleDoor")
+        {
+            Destroy(collision.gameObject);
+            AddScore();
+            AddHole();
+            AddNextObs();
+        }
         //if (collision.gameObject.tag == "Coin")
         //{
         //    AddScore();
