@@ -14,7 +14,6 @@ public class Player : MonoBehaviour {
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
-        AddHole();
 	}
 
 	void Update()
@@ -22,18 +21,17 @@ public class Player : MonoBehaviour {
 	
 	}
 
-    void AddHole()
+
+    void EffectTrigger()
     {
-        GameObject.Find("HolePosition").GetComponent<SpawnHole>().SpawnHoleAround();
+        GameObject.Find("Hole").GetComponent<HoleSpawn>().Shrink();
     }
 
     void AddScore(){
         GameObject.Find("GameManager").GetComponent<ScoreManager>().addScore(1);
     }
 
-    void AddNextCoin(){
-        GameObject.Find("Coins").GetComponent<SpawnCoin>().SpawnObj();
-    }
+ 
 
     void AddNextObs(){
         GameObject.Find("Obstacles").GetComponent<Spawn>().SpawnObj();
@@ -44,20 +42,15 @@ public class Player : MonoBehaviour {
 		rb.AddForce(transform.position * jumpForce);
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
-	{
-
-    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "HoleDoor")
         {
-            Destroy(collision.gameObject);
             AddScore();
-            AddHole();
             AddNextObs();
+            EffectTrigger();
         }
         //if (collision.gameObject.tag == "Coin")
         //{
