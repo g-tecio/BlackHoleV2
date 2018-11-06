@@ -18,8 +18,12 @@ public class Player : MonoBehaviour {
 
 	void Update()
 	{
-	
-	}
+
+    }
+
+    void SpawnNextHoleToPlay(){
+        GameObject.Find("Spawner").GetComponent<SpawnNextHole>().SpawnHole();
+    }
 
     void EffectTriggerObstacle()
     {
@@ -34,8 +38,6 @@ public class Player : MonoBehaviour {
     void AddScore(){
         GameObject.Find("GameManager").GetComponent<ScoreManager>().addScore(1);
     }
-
- 
 
     void AddNextObs(){
         GameObject.Find("Obstacles").GetComponent<Spawn>().SpawnObj();
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour {
             AddNextObs();
             EffectTrigger();
             EffectTriggerObstacle();
+            SpawnNextHoleToPlay();
         }
        
     }
