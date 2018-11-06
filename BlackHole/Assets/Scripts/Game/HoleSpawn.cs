@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HoleSpawn : MonoBehaviour {
 
+    Vector3 hole = new Vector3(3.86f, 3.86f, 0.0f);
+
 	public float shrinkSpeed = 3f;
 	// Use this for initialization
     public void Start () {
@@ -19,7 +21,7 @@ public class HoleSpawn : MonoBehaviour {
 	}
 
 	public void Shrink(){
-	transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
+        transform.localScale -= hole * shrinkSpeed * Time.deltaTime;
 
 		if (transform.localScale.x <= .05f){
 			Destroy(gameObject);
