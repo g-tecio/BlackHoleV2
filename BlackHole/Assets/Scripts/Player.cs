@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
 
     void EffectTrigger()
     {
-        GameObject.Find("Hole").GetComponent<HoleSpawn>().Shrink();
+        GameObject.Find("Hole").GetComponent<HoleSpawn>().Update();
     }
 
     void AddScore(){

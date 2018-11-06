@@ -8,12 +8,13 @@ public class HoleSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//transform.localScale = Vector3.one * 10f;
+		enabled = false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
 	
-			
+			Shrink();
 		
 	}
 
