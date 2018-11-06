@@ -6,7 +6,7 @@ public class HoleSpawn : MonoBehaviour {
 
 	public float shrinkSpeed = 3f;
 	// Use this for initialization
-	void Start () {
+    public void Start () {
 		//transform.localScale = Vector3.one * 10f;
 		enabled = false;
 	}
