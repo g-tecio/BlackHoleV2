@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoleSpawn : MonoBehaviour {
+public class DestroyObstacles : MonoBehaviour {
 
+	
 	public float shrinkSpeed = 3f;
 	// Use this for initialization
     public void Start () {
@@ -14,16 +15,15 @@ public class HoleSpawn : MonoBehaviour {
 	// Update is called once per frame
 	public void Update () {
 	
-			Shrink();
+			ShrinkObstacles();
 		
 	}
 
-	public void Shrink(){
+	public void ShrinkObstacles(){
 	transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
 
-	if (transform.localScale.x <= .05f){
-		Destroy(gameObject);
+		if (transform.localScale.x <= .15f){
+			Destroy(gameObject);
+		}
 	}
 }
-}
-

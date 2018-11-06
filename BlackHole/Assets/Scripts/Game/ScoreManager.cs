@@ -30,9 +30,9 @@ public class ScoreManager : MonoBehaviour {
         currentScore += score;
         currentScoreText.text = currentScore.ToString();
 
-        if(currentScore == 1){
-            UIImagen.sprite = Resources.Load<Sprite>("Assets/Level2/Wallpaper2");
-            UIButton.sprite = Resources.Load<Sprite>("Assets/Level2/BtnN2");
+        // if(currentScore == 1){
+        //     UIImagen.sprite = Resources.Load<Sprite>("Assets/Level2/Wallpaper2");
+        //     UIButton.sprite = Resources.Load<Sprite>("Assets/Level2/BtnN2");
         }
     }
-}
+

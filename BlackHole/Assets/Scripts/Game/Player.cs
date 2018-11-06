@@ -21,6 +21,10 @@ public class Player : MonoBehaviour {
 	
 	}
 
+    void EffectTriggerObstacle()
+    {
+        GameObject.Find("Obstacles").GetComponent<DestroyObstacles>().enabled = true;
+    }
 
     void EffectTrigger()
     {
@@ -51,28 +55,9 @@ public class Player : MonoBehaviour {
             AddScore();
             AddNextObs();
             EffectTrigger();
+            EffectTriggerObstacle();
         }
-        //if (collision.gameObject.tag == "Coin")
-        //{
-        //    AddScore();
-        //    Destroy(collision.gameObject);
-        //    if (coinUp == false)
-        //    {
-        //        coinUp = true;
-        //        GameObject.Find("Coins").GetComponent<CoinMovement>().speed = -75.0f;
-        //        GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
-        //        AddNextCoin();
-        //        AddNextObs();
-        //    }
-        //    else
-        //    {
-        //        coinUp = false;
-        //        GameObject.Find("Coins").GetComponent<CoinMovement>().speed = 75.0f;
-        //        GameObject.Find("Obstacles").GetComponent<Obstacle>().speed = -50.0f;
-        //        AddNextCoin();
-        //        AddNextObs();
-        //    }
-        //}
+       
     }
 
 }
